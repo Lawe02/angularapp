@@ -17,7 +17,7 @@ import { QuotesComponent } from './quotes/quotes.component';
     QuotesComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, FormsModule, RouterModule, 
+    BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot([]), 
     AppRoutingModule, 
   ],
   providers: [],
