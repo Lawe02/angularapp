@@ -11,6 +11,7 @@ import { ThemeService } from './themeService';
 export class AppComponent implements OnInit {
   public isAuthenticated: boolean = false;
   isDarkTheme: boolean | undefined;
+  title: string = 'angularapp';
 
   constructor(private http: HttpClient, private router: Router, private themeService: ThemeService) { }
 
