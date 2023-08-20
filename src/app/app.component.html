@@ -1,0 +1,30 @@
+<!--<app-navbar></app-navbar>-->
+<nav [ngClass]="{'bg-dark': isDarkTheme}" class="navbar navbar-expand-sm bg-light justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a [ngClass]="{'text-white': isDarkTheme}" class="nav-link" href="#">Hem </a>
+    </li>
+    <ng-container *ngIf="isAuthenticated;">
+      <li class="nav-item">
+        <a [ngClass]="{'text-white': isDarkTheme}" class="nav-link" href="/book">Böcker</a>
+      </li>
+      <li class="nav-item">
+        <a [ngClass]="{'text-white': isDarkTheme}" class="nav-link" href="/quotes">Mina Citat</a>
+      </li>
+    </ng-container>
+    <ng-container *ngIf="!isAuthenticated;">
+      <li class="nav-item">
+        <a [ngClass]="{'text-white': isDarkTheme}" class="nav-link" href="/login">Login</a>
+      </li>
+    </ng-container>
+    <button class="btn btn-dark mb-2" (click)="toggleTheme()">
+      Ändra Tema
+      <i [ngClass]="{'fa-sun': !isDarkTheme, 'fa-moon': isDarkTheme}" class="fa fa-fw"></i>
+    </button>
+  </ul>
+</nav>
+<br>
+
+
+<router-outlet></router-outlet>
+

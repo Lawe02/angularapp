@@ -1,0 +1,52 @@
+<div *ngIf="isAuthenticated">
+  <div [ngClass]="{'bg-dark text-white': isDarkTheme}" class="container mt-3 text-center" style="padding: 5px; border-radius: 5px" *ngIf="!showAddForm">
+    <p>Du kan lägga till {{ 5 - quotes.length }} fler citat.</p>
+    <button class="btn btn-success mb-2" (click)="showForm()">Nytt Citat <i class="fa-regular fa-square-plus"></i></button>
+  </div>
+
+  <div [ngClass]="{'bg-dark text-white': isDarkTheme}" class="container" *ngIf="showAddForm" style="padding: 5px; border-radius: 5px">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-center">Lägg Till Citat</h3>
+        <form (ngSubmit)="addQuote()">
+          <div class="form-group">
+            <label for="newQuote">Quote Text:</label>
+            <input [ngClass]="{'bg-secondary text-white': isDarkTheme}" type="text" class="form-control" id="newQuote" [(ngModel)]="newQuote.text" name="newQuote" required>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-success">Lägg till <i class="fa-regular fa-square-plus"></i></button>
+            <button class="btn btn-secondary" (click)="hideAddForm()">Avbryt <i class="fa-solid fa-ban"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row justify-content-center">
+      <div class="col-md-6" *ngFor="let quote of quotes">
+        <div class="card mb-3">
+          <div [ngClass]="{'bg-secondary text-white': isDarkTheme}" class="card-body" style="padding: 5px; border-radius: 5px">
+            <p class="card-text">{{ quote.text }}</p>
+            <button class="btn btn-danger" (click)="deleteQuote(quote.id)">Ta bort <i class="fa-solid fa-trash"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<div [ngClass]="{'bg-dark text-white': isDarkTheme}" *ngIf="!isAuthenticated" class="text-center mt-5 center-element" style="max-width: 300px; padding: 5px; border-radius: 5px;">
+  <h4>Logga in för denna funktion</h4>
+  <p>Logga iin för att hantera citat samt andra funktioner</p>
+  <a class="btn btn-primary" href="/login">Logga In</a>
+</div>
+<style>
+  .center-element {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>

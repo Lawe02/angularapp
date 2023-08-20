@@ -1,0 +1,17 @@
+<div [ngClass]="{'bg-secondary': isDarkTheme}" class="container" style="padding: 16px; border-radius: 5px;">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <form [ngClass]="{'bg-dark text-white': isDarkTheme}" (ngSubmit)="onSubmit()" class="border p-4 rounded shadow">
+        <div class="form-group">
+          <label for="username">Användarnamn:</label>
+          <input [ngClass]="{'bg-secondary text-white': isDarkTheme}"  type="text" id="username" [(ngModel)]="username" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="password">Lösenord:</label>
+          <input [ngClass]="{'bg-secondary text-white': isDarkTheme}"  type="password" id="password" [(ngModel)]="password" name="password" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Logga in</button>
+      </form>
+    </div>
+  </div>
+</div>
