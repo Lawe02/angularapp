@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { QuoteService } from '../QuoteService';
 import { ThemeService } from '../themeService';
-import { AppComponent } from '../app.component';
+import { AuthService } from '../auth.service';
+
 
 @Component({
   selector: 'app-quotes',
@@ -18,13 +19,13 @@ export class QuotesComponent {
     text: ''
   };
 
-  constructor(private quoteService: QuoteService, private themeService: ThemeService, private appService: AppComponent) { }
+  constructor(private quoteService: QuoteService, private themeService: ThemeService, private authService: AuthService) { }
 
   ngOnInit(){
     this.themeService.isDarkTheme$.subscribe(isDarkTheme => {
       this.isDarkTheme = isDarkTheme;
     });
-    this.isAuthenticated = this.appService.checkAuthenticationStatusBool();
+    this.isAuthenticated = this.authService.checkAuthenticationStatusBool();
     this.getQuotes();
   }
 

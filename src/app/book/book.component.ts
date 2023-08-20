@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book.service';
-import { AppComponent } from '../app.component';
+import { AuthService } from '../auth.service';
 import { ThemeService } from '../themeService';
 
 
@@ -24,14 +24,14 @@ export class BookComponent implements OnInit {
     publicityDate: ''
   };
 
-  constructor(private bookService: BookService, private themeService: ThemeService, private appService: AppComponent) { }
+  constructor(private bookService: BookService, private themeService: ThemeService, private authService: AuthService) { }
 
   ngOnInit() {
     this.themeService.isDarkTheme$.subscribe(isDarkTheme => {
       this.isDarkTheme = isDarkTheme;
     });
     this.getBooks();
-    this.isAuthenticated = this.appService.checkAuthenticationStatusBool();
+    this.isAuthenticated = this.authService.checkAuthenticationStatusBool();
   }
 
   showAddForm() {
