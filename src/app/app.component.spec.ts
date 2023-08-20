@@ -21,9 +21,9 @@ describe('AppComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'angularapp'`, () => {
-    expect(component.title).toEqual('angularapp');
-  });
+  //it(`should have as title 'angularapp'`, () => {
+  //  expect(component.title).toEqual('angularapp');
+  //});
 
   it('should render title', () => {
     fixture.detectChanges();

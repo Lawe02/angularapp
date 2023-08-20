@@ -10,7 +10,6 @@ import { AuthService } from './auth.service';
 export class AppComponent implements OnInit {
   public isAuthenticated: boolean = false;
   isDarkTheme: boolean | undefined;
-  title: string = 'angularapp';
 
   constructor(private themeService: ThemeService, private authService: AuthService) { }
 
