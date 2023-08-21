@@ -1,9 +1,9 @@
 const PROXY_CONFIG = [
   {
     context: [
-      "/weatherforecast",
+      "/crud
     ],
-    target: "https://localhost:7279",
+    target: "https://webapi20230820203350.azurewebsites.net/",
     secure: false
   }
 ]

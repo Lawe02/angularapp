@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BookService {
-  private apiUrl = 'https://webapi20230820203350.azurewebsites.net/api'; // Replace with your actual API URL
+  private apiUrl = 'https://webapi20230820203350.azurewebsites.net/'; // Replace with your actual API URL
 
   constructor(private http: HttpClient) { }
 
