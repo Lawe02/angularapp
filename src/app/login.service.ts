@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LoginService {
-  private apiUrl = 'https://localhost:7279/api'; // Replace with your actual API URL
+  private apiUrl = 'https://webapi20230820203350.azurewebsites.net/api'; // Replace with your actual API URL
 
   constructor(private http: HttpClient) { }
 
