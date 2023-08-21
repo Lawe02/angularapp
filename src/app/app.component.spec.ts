@@ -22,7 +22,7 @@ describe('AppComponent', () => {
   });
 
   it(`should have as title 'angularapp'`, () => {
-    expect(component.title).toEqual('Welcome to angularapp!');
+    expect(component.title).toEqual('angularapp');
   });
 
   it('should render title', () => {
