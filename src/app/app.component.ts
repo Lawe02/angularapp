@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.authService.checkAuthenticationStatus();
+    this.isAuthenticated = this.authService.checkAuthenticationStatusBool();
     setInterval(() => this.authService.checkAuthenticationStatus(), 60000);
     this.themeService.isDarkTheme$.subscribe(isDarkTheme => {
       this.isDarkTheme = isDarkTheme;
