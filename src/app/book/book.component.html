@@ -27,7 +27,8 @@
     <div [ngClass]="{'bg-secondary text-white': isDarkTheme}" class="row" *ngIf="!(isAddFormVisible || isUpdateFormVisible)" style="border-radius: 3px; padding: 3px;">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class="table">
+          <table class="table table-responsive-sm">
+            <!-- Added 'table-responsive-sm' class -->
             <thead>
               <tr>
                 <th [ngClass]="{'bg-dark text-white': isDarkTheme}">Titel</th>
@@ -51,6 +52,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Display the update form -->
     <div [ngClass]="{'bg-dark text-white': isDarkTheme}" *ngIf="isUpdateFormVisible" style="padding:5px; border-radius:5px">
